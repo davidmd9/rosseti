@@ -41,7 +41,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv1"
-        android:padding="19dp">
+        android:padding="19dp"
+        android:paddingEnd="0dp">
         <TextView
             android:id="@+id/tvTopic"
             android:layout_width="wrap_content"
@@ -51,6 +52,14 @@
             android:textColor="@color/purple_200"
             android:textSize="20sp"
             android:hint="Выберите тему"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/arrow_"/>
     </RelativeLayout>
 
     <RelativeLayout
