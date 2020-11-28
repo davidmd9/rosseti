@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -25,7 +26,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ProjectDetailsFragment extends BaseFragment {
+public class ExpertDetailsFragment extends BaseFragment {
 
     private TextView tvExistingSolution;
     private ImageButton btnVideoPreviewNow;
@@ -46,14 +47,14 @@ public class ProjectDetailsFragment extends BaseFragment {
 
     private Suggestion suggestion = new Suggestion();
 
-    public ProjectDetailsFragment(Suggestion suggestion) {
+    public ExpertDetailsFragment(Suggestion suggestion) {
         this.suggestion = suggestion;
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_project_details, container, false);
+        View view = inflater.inflate(R.layout.fragment_expert_details, container, false);
 
         tvExistingSolution = view.findViewById(R.id.tvExistingSolution);
         btnVideoPreviewNow = view.findViewById(R.id.btnVideoPreviewNow);
@@ -138,6 +139,56 @@ public class ProjectDetailsFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 ((MainActivity) getMainActivity()).pushFragment(new ChatFragment(suggestion), true);
+            }
+        });
+
+
+        ImageButton btnSuccess = view.findViewById(R.id.btnSuccess);
+        ImageButton btnFalse = view.findViewById(R.id.btnFalse);
+
+        btnSuccess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showProgress();
+                ApiClient.getApi().expertJudgment(suggestion.getId(), 1).enqueue(new Callback<BaseModel>() {
+                    @Override
+                    public void onResponse(Call<BaseModel> call, Response<BaseModel> response) {
+                        hideProgress();
+
+                        if(response.code() == 200){
+                            getMainActivity().getSupportFragmentManager().popBackStack();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<BaseModel> call, Throwable t) {
+                        hideProgress();
+
+                    }
+                });
+            }
+        });
+
+        btnFalse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showProgress();
+                ApiClient.getApi().expertJudgment(suggestion.getId(), 0).enqueue(new Callback<BaseModel>() {
+                    @Override
+                    public void onResponse(Call<BaseModel> call, Response<BaseModel> response) {
+                        hideProgress();
+                        if(response.code() == 200){
+                            getMainActivity().getSupportFragmentManager().popBackStack();
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<BaseModel> call, Throwable t) {
+                        hideProgress();
+
+                    }
+                });
             }
         });
 

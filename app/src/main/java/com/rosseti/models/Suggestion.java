@@ -1,5 +1,7 @@
 package com.rosseti.models;
 
+import java.util.List;
+
 public class Suggestion {
 
     private Integer id;
@@ -7,6 +9,8 @@ public class Suggestion {
     private Integer author_id;
 
     private String title;
+
+    private Integer rating;
 
     private Integer topic_id;
 
@@ -27,6 +31,18 @@ public class Suggestion {
     private Integer status_id;
 
     private Author author;
+
+    private Integer experted;
+
+    private List<Comment> comments;
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
 
     public Integer getId() {
         return id;
@@ -130,5 +146,21 @@ public class Suggestion {
 
     public void setAuthor(Author author) {
         this.author = author;
+    }
+
+    public Integer getRating() {
+        return rating;
+    }
+
+    public void setRating(Integer rating) {
+        this.rating = rating;
+    }
+
+    public Integer getExperted() {
+        return experted;
+    }
+
+    public void setExperted(Integer experted) {
+        this.experted = experted;
     }
 }

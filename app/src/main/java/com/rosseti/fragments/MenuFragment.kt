@@ -41,6 +41,7 @@ class MenuFragment: BaseFragment() {
 
         createExpert.setOnClickListener {
 //            (activity as? MainActivity)?.pushFragment()
+            (activity as? MainActivity)?.pushFragment(ExpertFragment(), true)
         }
     }
 }

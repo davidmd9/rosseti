@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFBFD">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerChat"
+        android:paddingBottom="12dp"
+        android:paddingTop="12dp"
+        android:clipToPadding="false"
+        android:layout_above="@id/rlBottom"/>
+
+    <RelativeLayout
+        android:id="@+id/rlBottom"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_margin="24dp"
+        android:background="@drawable/bg_rectangle_66"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/etMessage"
+            android:background="@color/float_transparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="58dp"
+            android:maxLines="4"
+            android:padding="12dp"
+            android:minLines="1"
+            android:hint="Ваше сообщение"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/abeezee_regular"
+            android:scrollbars="vertical"
+            android:fadeScrollbars="false"
+            android:layout_toStartOf="@id/btnSend"/>
+
+        <ImageButton
+            android:id="@+id/btnSend"
+            android:layout_width="48dp"
+            android:layout_height="42dp"
+            android:elevation="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="6dp"
+            android:scaleType="centerInside"
+            android:foreground="?android:attr/selectableItemBackground"
+
+            android:src="@drawable/ic_baseline_arrow_upward_24"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_blue_circle"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

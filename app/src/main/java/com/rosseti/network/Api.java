@@ -22,4 +22,14 @@ public interface Api {
 
     @GET("suggestions/index")
     Call<Suggestions> getSuggestions();
+
+    @FormUrlEncoded
+    @POST("suggestions/rating/store")
+    Call<BaseModel> setRating(@Field("suggestion_id") Integer id, @Field("value") Integer value);
+
+
+    @FormUrlEncoded
+    @POST("suggestions/expert-judgment")
+    Call<BaseModel> expertJudgment(@Field("suggestion_id") Integer id,
+                                   @Field("accepted") Integer accepted);
 }

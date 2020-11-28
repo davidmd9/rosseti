@@ -26,12 +26,13 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ProjectsFragment extends BaseFragment {
+public class ExpertFragment extends BaseFragment {
 
     private RecyclerView recyclerProjects;
     private ProjectsAdapter projectsAdapter;
 
     private SwipeRefreshLayout swipeRefreshLayout;
+
     private List<Suggestion> suggestionList = new ArrayList<>();
 
     @Nullable
@@ -43,15 +44,19 @@ public class ProjectsFragment extends BaseFragment {
         recyclerProjects = view.findViewById(R.id.recyclerProjects);
         recyclerProjects.setLayoutManager(new LinearLayoutManager(getMainActivity()));
 
-        projectsAdapter.setListener(suggestion -> ((MainActivity) getMainActivity()).pushFragment(new ProjectDetailsFragment(suggestion), true));
+        projectsAdapter.setListener(suggestion -> ((MainActivity) getMainActivity()).pushFragment(new ExpertDetailsFragment(suggestion), true));
 
         swipeRefreshLayout = view.findViewById(R.id.swipeRefresh);
         swipeRefreshLayout.setOnRefreshListener(() -> refresh());
 
-
         getSuggestions();
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 
     private void getSuggestions() {
@@ -67,7 +72,13 @@ public class ProjectsFragment extends BaseFragment {
                     if (response.code() == 200) {
                         if (response.body() != null && response.body().isSuccess()) {
                             if (response.body().getSuggestions() != null && response.body().getSuggestions().size() > 0) {
-                                suggestionList = response.body().getSuggestions();
+
+                                for(Suggestion suggestion : response.body().getSuggestions()){
+                                    if(suggestion.getStatus_id() == 2){
+                                        suggestionList.add(suggestion);
+                                    }
+                                }
+
                                 projectsAdapter.add(suggestionList);
                                 recyclerProjects.setAdapter(projectsAdapter);
                             }
@@ -78,6 +89,7 @@ public class ProjectsFragment extends BaseFragment {
                 @Override
                 public void onFailure(Call<Suggestions> call, Throwable t) {
                     hideProgress();
+                    swipeRefreshLayout.setRefreshing(false);
                 }
             });
         }
@@ -85,7 +97,6 @@ public class ProjectsFragment extends BaseFragment {
 
     private void refresh(){
 //        suggestionList = new ArrayList<>();
-//        projectsAdapter.getItems().clear();
 //        projectsAdapter.add(suggestionList);
 //        recyclerProjects.setAdapter(projectsAdapter);
 
@@ -98,7 +109,15 @@ public class ProjectsFragment extends BaseFragment {
                     if (response.body() != null && response.body().isSuccess()) {
                         if (response.body().getSuggestions() != null && response.body().getSuggestions().size() > 0) {
                             suggestionList.clear();
-                            suggestionList.addAll(response.body().getSuggestions());
+                            for(Suggestion suggestion : response.body().getSuggestions()){
+                                if(suggestion.getStatus_id() == 2){
+                                    suggestionList.add(suggestion);
+                                }
+                            }
+
+//                            projectsAdapter.add(suggestionList);
+//                            recyclerProjects.setAdapter(projectsAdapter);
+                            projectsAdapter.notifyDataSetChanged();
                         }
                     }
                 }

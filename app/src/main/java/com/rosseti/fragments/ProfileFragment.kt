@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.rosseti.MainActivity
@@ -20,14 +21,14 @@ class ProfileFragment: BaseFragment() {
     lateinit var textViewRating: TextView
     lateinit var textViewInfo: TextView
 
-    lateinit var buttonNext: ConstraintLayout
+    lateinit var buttonNext: RelativeLayout
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_menu, container, false)
+        val view = inflater.inflate(R.layout.fragment_profile, container, false)
         bindView(view)
 
         return view
@@ -41,13 +42,10 @@ class ProfileFragment: BaseFragment() {
         textViewInfo = view.findViewById(R.id.text_view_info)
         textViewTotal = view.findViewById(R.id.text_view_total)
 
+        buttonNext = view.findViewById(R.id.button_next)
 
         buttonNext.setOnClickListener {
-//            (activity as? MainActivity)?.pushFragment()
+            mainActivity?.supportFragmentManager?.popBackStack()
         }
-
     }
-
-
-
 }

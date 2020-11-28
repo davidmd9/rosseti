@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.rosseti.base.BaseActivity
 import com.rosseti.base.BaseFragment
 import com.rosseti.fragments.MenuFragment
+import com.rosseti.fragments.ProfileFragment
 import com.rosseti.fragments.RegFragment
 
 class MainActivity : BaseActivity() {
@@ -25,7 +26,7 @@ class MainActivity : BaseActivity() {
         btnProfile = findViewById(R.id.btnProfile)
         btnBack = findViewById(R.id.btnBack)
 
-
+        btnProfile.setOnClickListener(View.OnClickListener { pushFragment(ProfileFragment(), true) })
         pushFragment(MenuFragment(), false)
 
     }

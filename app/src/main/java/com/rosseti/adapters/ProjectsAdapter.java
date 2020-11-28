@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -33,17 +34,14 @@ public class ProjectsAdapter extends BaseAdapter<ProjectsAdapter.ViewHolder> {
         return new ViewHolder(view);
     }
 
-    @Override
-    public int getItemCount() {
-        return 5;
-    }
-
     class ViewHolder extends BaseAdapter.BaseViewHolder {
 
         private TextView tvName;
         private TextView tvAuthor;
         private TextView tvTheme;
         private ImageView imageView;
+        private TextView tvRating;
+        private RelativeLayout rlShadow;
 
         public ViewHolder(@NotNull View view) {
             super(view);
@@ -51,6 +49,8 @@ public class ProjectsAdapter extends BaseAdapter<ProjectsAdapter.ViewHolder> {
             tvName = view.findViewById(R.id.tvName);
             tvAuthor = view.findViewById(R.id.tvAuthor);
             tvTheme = view.findViewById(R.id.tvTheme);
+            tvRating = view.findViewById(R.id.tvRating);
+            rlShadow = view.findViewById(R.id.rlShadow);
 
         }
 
@@ -65,9 +65,19 @@ public class ProjectsAdapter extends BaseAdapter<ProjectsAdapter.ViewHolder> {
                 }
             }
 
+            if(suggestion.getRating() != null){
+                tvRating.setText("Рейтинг: " + suggestion.getRating());
+            }
+
             itemView.setOnClickListener(v -> {
                 if (listener != null) listener.onProject(suggestion);
             });
+
+            if(suggestion.getExperted() == 1){
+                rlShadow.setVisibility(View.VISIBLE);
+            } else {
+                rlShadow.setVisibility(View.GONE);
+            }
         }
     }
 }

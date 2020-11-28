@@ -5,8 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingStart="20dp"
-    android:paddingEnd="20dp">
+    android:paddingEnd="20dp"
+    android:background="#FAFBFD">
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerProjects"
@@ -14,5 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingBottom="20dp"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </LinearLayout>
