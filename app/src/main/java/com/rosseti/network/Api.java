@@ -2,6 +2,7 @@ package com.rosseti.network;
 
 import com.rosseti.models.BaseModel;
 import com.rosseti.models.Suggestions;
+import com.rosseti.models.TopicsResponse;
 
 import okhttp3.MultipartBody;
 import retrofit2.Call;
@@ -39,4 +40,7 @@ public interface Api {
             @Part MultipartBody.Part existingSolutionVideo,
             @Part MultipartBody.Part proposedSolutionVideo
     );
+
+    @GET("topics")
+    Call<TopicsResponse> getTopics();
 }

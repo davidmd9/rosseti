@@ -90,8 +90,8 @@
             android:layout_height="match_parent"
             android:layout_marginEnd="12dp"
             android:layout_weight="2"
-            android:scaleType="fitCenter"
-            android:background="@android:color/holo_blue_light" />
+            android:background="@android:color/holo_blue_light"
+            android:scaleType="centerCrop" />
 
         <ImageView
             android:id="@+id/ivTakeVideo"
