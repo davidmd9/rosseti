@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.FragmentTransaction
 import com.rosseti.base.BaseActivity
 import com.rosseti.base.BaseFragment
+import com.rosseti.fragments.MenuFragment
 import com.rosseti.fragments.RegFragment
 
 class MainActivity : BaseActivity() {
@@ -13,7 +14,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        pushFragment(RegFragment(), true)
+        pushFragment(MenuFragment(), true)
     }
 
     fun pushFragment(fragment: BaseFragment, isAdd: Boolean) {
