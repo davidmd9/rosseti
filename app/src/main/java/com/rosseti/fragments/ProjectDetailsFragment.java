@@ -80,6 +80,8 @@ public class ProjectDetailsFragment extends BaseFragment {
         imagePreviewExistingSolution = view.findViewById(R.id.imagePreviewExistingSolution);
         imagePreviewProposedSolution = view.findViewById(R.id.imagePreviewProposedSolution);
 
+        tvPositiveEffect.setText(suggestion.getPositive_effect() != null ? suggestion.getPositive_effect() : "");
+
 
         //EXISTING SOLUTION
         if (suggestion.getExisting_solution_text() != null) {
