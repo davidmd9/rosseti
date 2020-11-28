@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.rosseti.R
 import com.rosseti.base.BaseFragment
 
-class RegFragment: BaseFragment() {
+class RegFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -15,6 +15,5 @@ class RegFragment: BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_reg, container, false)
-
     }
 }
