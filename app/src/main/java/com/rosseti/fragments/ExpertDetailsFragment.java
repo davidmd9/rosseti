@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -44,6 +45,9 @@ public class ExpertDetailsFragment extends BaseFragment {
 
     private RelativeLayout rlVideoExistingSolution;
     private RelativeLayout rlVideoProposedSolution;
+
+    private LinearLayout llMediaExistingSolution;
+    private LinearLayout llMediaProposedSolution;
 
     private Suggestion suggestion = new Suggestion();
 
@@ -90,6 +94,13 @@ public class ExpertDetailsFragment extends BaseFragment {
             rlVideoExistingSolution.setVisibility(View.INVISIBLE);
         }
 
+        llMediaExistingSolution = view.findViewById(R.id.llMediaExistingSolution);
+
+        if (suggestion.getExisting_solution_video() == null || suggestion.getExisting_solution_video().isEmpty() &&
+                suggestion.getExisting_solution_image() == null){
+            llMediaExistingSolution.setVisibility(View.GONE);
+        }
+
         //PROPOSED SOLUTION
         if (suggestion.getProposed_solution_image() != null) {
             Picasso.get().load(suggestion.getProposed_solution_image()).into(imageViewProposedSolution);
@@ -105,6 +116,26 @@ public class ExpertDetailsFragment extends BaseFragment {
         if (suggestion.getProposed_solution_text() != null) {
             tvProposedSolution.setText(suggestion.getProposed_solution_text());
         }
+
+        llMediaProposedSolution = view.findViewById(R.id.llMediaProposedSolution);
+        if (suggestion.getProposed_solution_video() == null || suggestion.getProposed_solution_video().isEmpty() &&
+                suggestion.getProposed_solution_image() == null){
+            llMediaProposedSolution.setVisibility(View.GONE);
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         //POSITIVE EFFECT
         if (suggestion.getPositive_effect() != null) {

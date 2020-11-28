@@ -1,6 +1,6 @@
 package com.rosseti.models;
 
-public class Comment {
+public class Comment extends Object {
 
     private Integer id;
 

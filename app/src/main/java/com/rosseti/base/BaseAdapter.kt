@@ -19,8 +19,12 @@ abstract class BaseAdapter<VH : BaseAdapter.BaseViewHolder> : RecyclerView.Adapt
         return items[position]
     }
 
+    fun add(newItem: Any) {
+        items.add(newItem)
+    }
 
     fun add(newItems: List<Any>) {
+        items.clear()
         items.addAll(newItems)
     }
 

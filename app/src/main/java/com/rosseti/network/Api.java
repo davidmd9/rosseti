@@ -1,6 +1,7 @@
 package com.rosseti.network;
 
 import com.rosseti.models.BaseModel;
+import com.rosseti.models.Comments;
 import com.rosseti.models.Suggestions;
 import com.rosseti.models.TopicsResponse;
 
@@ -48,9 +49,13 @@ public interface Api {
             @Part MultipartBody.Part existingSolutionImage,
             @Part MultipartBody.Part proposedSolutionImage,
             @Part MultipartBody.Part existingSolutionVideo,
-            @Part MultipartBody.Part proposedSolutionVideo
-    );
+            @Part MultipartBody.Part proposedSolutionVideo);
 
     @GET("topics")
     Call<TopicsResponse> getTopics();
+
+    @FormUrlEncoded
+    @POST("suggestions/comment/store")
+    Call<Comments> addComment(@Field("suggestion_id") Integer id,
+                              @Field("text") String text);
 }

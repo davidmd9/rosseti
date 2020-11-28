@@ -1,11 +1,14 @@
 package com.rosseti.fragments;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -43,6 +46,9 @@ public class ProjectDetailsFragment extends BaseFragment {
 
     private RelativeLayout rlVideoExistingSolution;
     private RelativeLayout rlVideoProposedSolution;
+
+    private LinearLayout llMediaExistingSolution;
+    private LinearLayout llMediaProposedSolution;
 
     private Suggestion suggestion = new Suggestion();
 
@@ -89,6 +95,24 @@ public class ProjectDetailsFragment extends BaseFragment {
             rlVideoExistingSolution.setVisibility(View.INVISIBLE);
         }
 
+        btnVideoPreviewNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent playVideo = new Intent(Intent.ACTION_VIEW);
+                playVideo.setDataAndType(Uri.parse(suggestion.getExisting_solution_video()), "video/mp4");
+                startActivity(playVideo);
+//                ((MainActivity) getMainActivity()).pushFragment(new VideoFragment(suggestion.getExisting_solution_video()), true);
+            }
+        });
+
+        llMediaExistingSolution = view.findViewById(R.id.llMediaExistingSolution);
+
+        if (suggestion.getExisting_solution_video() == null || suggestion.getExisting_solution_video().isEmpty() &&
+                suggestion.getExisting_solution_image() == null){
+            llMediaExistingSolution.setVisibility(View.GONE);
+        }
+
+
         //PROPOSED SOLUTION
         if (suggestion.getProposed_solution_image() != null) {
             Picasso.get().load(suggestion.getProposed_solution_image()).into(imageViewProposedSolution);
@@ -104,6 +128,24 @@ public class ProjectDetailsFragment extends BaseFragment {
         if (suggestion.getProposed_solution_text() != null) {
             tvProposedSolution.setText(suggestion.getProposed_solution_text());
         }
+
+        llMediaProposedSolution = view.findViewById(R.id.llMediaProposedSolution);
+        if (suggestion.getProposed_solution_video() == null || suggestion.getProposed_solution_video().isEmpty() &&
+                suggestion.getProposed_solution_image() == null){
+            llMediaProposedSolution.setVisibility(View.GONE);
+        }
+
+        btnVideoPreviewProposedSolution.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent playVideo = new Intent(Intent.ACTION_VIEW);
+                playVideo.setDataAndType(Uri.parse(suggestion.getProposed_solution_video()), "video/mp4");
+                startActivity(playVideo);
+//                ((MainActivity) getMainActivity()).pushFragment(new VideoFragment(suggestion.getProposed_solution_video()), true);
+            }
+        });
+
 
         //POSITIVE EFFECT
         if (suggestion.getPositive_effect() != null) {

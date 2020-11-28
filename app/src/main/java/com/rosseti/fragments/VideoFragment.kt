@@ -1,5 +1,6 @@
 package com.rosseti.fragments
 
+import android.media.session.MediaController
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +10,8 @@ import android.widget.VideoView
 import com.rosseti.R
 import com.rosseti.base.BaseFragment
 
-class VideoFragment(private val url: String): BaseFragment() {
+
+class VideoFragment(private val url: String) : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,8 +26,17 @@ class VideoFragment(private val url: String): BaseFragment() {
 
     private fun bindView(view: View) {
         val vView = view.findViewById<VideoView>(R.id.videoView)
-        vView.setVideoPath(url)
-        vView.start()
+
+        val LINK = url
+        context?.let { context ->
+            val mc = android.widget.MediaController(context)
+            mc.setAnchorView(vView)
+            mc.setMediaPlayer(vView)
+            val video = Uri.parse(LINK)
+            vView.setMediaController(mc)
+            vView.setVideoURI(video)
+            vView.start()
+        }
     }
 
 

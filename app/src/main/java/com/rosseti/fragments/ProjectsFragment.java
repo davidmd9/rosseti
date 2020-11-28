@@ -84,11 +84,6 @@ public class ProjectsFragment extends BaseFragment {
     }
 
     private void refresh(){
-//        suggestionList = new ArrayList<>();
-//        projectsAdapter.getItems().clear();
-//        projectsAdapter.add(suggestionList);
-//        recyclerProjects.setAdapter(projectsAdapter);
-
         ApiClient.getApi().getSuggestions().enqueue(new Callback<Suggestions>() {
             @Override
             public void onResponse(Call<Suggestions> call, Response<Suggestions> response) {

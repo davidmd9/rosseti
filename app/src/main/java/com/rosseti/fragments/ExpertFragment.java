@@ -96,9 +96,6 @@ public class ExpertFragment extends BaseFragment {
     }
 
     private void refresh(){
-//        suggestionList = new ArrayList<>();
-//        projectsAdapter.add(suggestionList);
-//        recyclerProjects.setAdapter(projectsAdapter);
 
         ApiClient.getApi().getSuggestions().enqueue(new Callback<Suggestions>() {
             @Override
@@ -115,8 +112,6 @@ public class ExpertFragment extends BaseFragment {
                                 }
                             }
 
-//                            projectsAdapter.add(suggestionList);
-//                            recyclerProjects.setAdapter(projectsAdapter);
                             projectsAdapter.notifyDataSetChanged();
                         }
                     }
