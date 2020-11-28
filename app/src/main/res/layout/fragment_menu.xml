@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/createSuggestion"
+        android:layout_width="match_parent"
+        android:elevation="5dp"
+        android:layout_height="165dp"
+        android:layout_margin="35dp">
+        
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:src="@drawable/rosseti_media"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="@font/abeezee_regular"
+            android:textSize="20sp"
+            android:lines="2"
+            android:text="Создать\nпредложение"
+            android:textColor="@color/purple_200"
+            android:textAlignment="center"
+            app:layout_constraintStart_toEndOf="@+id/image"/>
+        
+        
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/createApplication"
+        android:layout_width="match_parent"
+        android:elevation="5dp"
+        android:layout_below="@id/createSuggestion"
+        android:layout_height="165dp"
+        android:layout_margin="35dp"
+        android:layout_marginTop="32dp">
+
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:src="@drawable/idea_1"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="@font/abeezee_regular"
+            android:textSize="20sp"
+            android:text="@string/application"
+            android:textColor="@color/purple_200"
+            android:textAlignment="center"
+            app:layout_constraintStart_toEndOf="@+id/image2"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/createExpert"
+        android:layout_width="match_parent"
+        android:elevation="5dp"
+        android:layout_below="@id/createApplication"
+        android:layout_height="165dp"
+        android:layout_margin="35dp"
+        android:layout_marginTop="32dp">
+
+        <ImageView
+            android:id="@+id/image3"
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:src="@drawable/skills_1"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="@font/abeezee_regular"
+            android:textSize="20sp"
+            android:text="@string/expert"
+            android:textColor="@color/purple_200"
+            android:textAlignment="center"
+            app:layout_constraintStart_toEndOf="@+id/image3"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</RelativeLayout>
