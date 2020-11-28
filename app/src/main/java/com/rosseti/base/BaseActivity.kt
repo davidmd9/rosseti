@@ -11,27 +11,30 @@ abstract class BaseActivity : AppCompatActivity() {
     private var progressDialog:ACProgressFlower? = null
     private var alertDialog:SweetAlertDialog? = null
 
-     fun showProgress() {
-         hideProgress();
-         progressDialog = ACProgressFlower.Builder(this)
-             .direction(ACProgressConstant.DIRECT_ANTI_CLOCKWISE)
-             .themeColor(Color.WHITE)
-             .fadeColor(Color.DKGRAY).build()
-         progressDialog?.show()
+    fun showProgress() {
+     hideProgress();
+     progressDialog = ACProgressFlower.Builder(this)
+         .direction(ACProgressConstant.DIRECT_ANTI_CLOCKWISE)
+         .themeColor(Color.WHITE)
+         .fadeColor(Color.DKGRAY).build()
+     progressDialog?.show()
 
     }
 
-     fun hideProgress() {
-        progressDialog?.hide()
+    fun hideProgress() {
+    progressDialog?.hide()
     }
 
-     fun showErrorMessage(error: String) {
+    fun showErrorMessage(error: String) {
          alertDialog?.dismiss()
          alertDialog = SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE)
          alertDialog?.contentText = error
          alertDialog?.show()
 
     }
+
+    abstract fun setToolBarTitle(text: String)
+    abstract fun setBackButtonVisible(isVisible: Boolean)
 
     override fun onDestroy() {
         progressDialog?.dismiss()
