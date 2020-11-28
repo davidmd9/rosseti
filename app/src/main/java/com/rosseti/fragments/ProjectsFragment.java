@@ -22,6 +22,8 @@ import com.rosseti.network.ApiClient;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jetbrains.annotations.NotNull;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -105,5 +107,16 @@ public class ProjectsFragment extends BaseFragment {
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
+    }
+
+    @NotNull
+    @Override
+    public String getTitle() {
+        return "Проекты";
+    }
+
+    @Override
+    public void setTitle(@NotNull String title) {
+
     }
 }

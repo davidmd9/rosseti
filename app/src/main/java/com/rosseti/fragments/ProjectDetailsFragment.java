@@ -28,6 +28,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import org.jetbrains.annotations.NotNull;
+
 public class ProjectDetailsFragment extends BaseFragment {
 
     private TextView tvExistingSolution;
@@ -184,6 +186,17 @@ public class ProjectDetailsFragment extends BaseFragment {
         });
 
         return view;
+    }
+
+    @NotNull
+    @Override
+    public String getTitle() {
+        return "Проекты";
+    }
+
+    @Override
+    public void setTitle(@NotNull String title) {
+
     }
 
 }

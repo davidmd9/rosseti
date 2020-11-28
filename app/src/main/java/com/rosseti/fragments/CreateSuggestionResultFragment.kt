@@ -23,6 +23,7 @@ import java.io.File
 
 class CreateSuggestionResultFragment(private var model: SuggestionRequest): BaseFragment() {
     val PICK_IMAGE = 1
+    override var title = "Создать"
 
     lateinit var etContent: EditText
     lateinit var btnNext: RelativeLayout
@@ -43,6 +44,7 @@ class CreateSuggestionResultFragment(private var model: SuggestionRequest): Base
 
         btnNext.setOnClickListener {
             showProgress()
+            model.positiveEffect = etContent.text.toString()
 
             ApiClient.getApi().sendApplication(
                 model.title,

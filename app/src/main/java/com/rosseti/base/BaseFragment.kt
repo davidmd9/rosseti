@@ -6,10 +6,12 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import com.rosseti.MainActivity
 import com.rosseti.R
 
 abstract class BaseFragment : Fragment() {
 
+    abstract var title: String
     var mainActivity: BaseActivity? = null
     
      fun showProgress() {
@@ -39,7 +41,7 @@ abstract class BaseFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-
+        (activity as? MainActivity)?.setToolBarTitle(title)
     }
 
 }

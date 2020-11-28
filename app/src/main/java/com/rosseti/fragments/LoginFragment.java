@@ -15,12 +15,15 @@ import com.rosseti.R;
 import com.rosseti.base.BaseFragment;
 import com.rosseti.network.ApiClient;
 
+import org.jetbrains.annotations.NotNull;
+
 import br.com.sapereaude.maskedEditText.MaskedEditText;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginFragment extends BaseFragment {
+
 
     @Nullable
     @Override
@@ -59,5 +62,15 @@ public class LoginFragment extends BaseFragment {
         });
 
         return view;
+    }
+
+    @NotNull
+    @Override
+    public String getTitle() {
+        return null;
+    }
+
+    @Override
+    public void setTitle(@NotNull String title) {
     }
 }

@@ -1,113 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/subtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Расскажите о предложении"
-        android:fontFamily="@font/abeezee_regular"
-        android:textSize="20sp"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/purple_200"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <TextView
-        android:id="@+id/tv1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Виберите тему и название"
-        android:fontFamily="@font/abeezee_regular"
-        android:textSize="20sp"
-        android:layout_marginTop="34dp"
-        android:textColor="@color/purple_200"
-        app:layout_constraintTop_toBottomOf="@+id/subtitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <RelativeLayout
-        android:id="@+id/topic"
-        android:layout_width="0dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="35dp"
-        android:background="@drawable/bg_input"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv1"
-        android:padding="19dp"
-        android:paddingEnd="5dp">
-        <TextView
-            android:id="@+id/tvTopic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:fontFamily="@font/abeezee_regular"
-            android:textColor="@color/purple_200"
-            android:textSize="20sp"
-            android:hint="Выберите тему"/>
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
-            android:src="@drawable/arrow_"/>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rlName"
-        android:layout_width="0dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="35dp"
-        android:background="@drawable/bg_input"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topic"
-        android:padding="19dp">
-        <EditText
-            android:id="@+id/etName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:fontFamily="@font/abeezee_regular"
-            android:foregroundTint="#AAAAAA"
-            android:textColor="@color/purple_200"
-            android:textSize="20sp"
-            android:background="@android:color/transparent"
-            android:hint="Название"/>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/btnNext"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="70dp"
-        android:elevation="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/bg_white_24">
+        android:layout_height="wrap_content">
         <TextView
+            android:id="@+id/subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:text="Расскажите о предложении"
             android:fontFamily="@font/abeezee_regular"
-            android:textColor="@color/purple_200"
             android:textSize="20sp"
-            android:elevation="5dp"
-            android:text="Дальше"/>
-    </RelativeLayout>
+            android:layout_marginTop="16dp"
+            android:textColor="@color/purple_200"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Виберите тему и название"
+            android:fontFamily="@font/abeezee_regular"
+            android:textSize="20sp"
+            android:layout_marginTop="34dp"
+            android:textColor="@color/purple_200"
+            app:layout_constraintTop_toBottomOf="@+id/subtitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <RelativeLayout
+            android:id="@+id/topic"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="35dp"
+            android:background="@drawable/bg_input"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv1"
+            android:padding="15dp"
+            android:paddingEnd="5dp">
+            <TextView
+                android:id="@+id/tvTopic"
+                android:layout_width="match_parent"
+                android:lines="1"
+                android:ellipsize="end"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/abeezee_regular"
+                android:textColor="@color/purple_200"
+                android:textSize="20sp"
+                android:layout_toStartOf="@+id/ivArrow"
+                android:hint="Выберите тему"/>
+
+
+            <ImageView
+                android:id="@+id/ivArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/arrow_"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlName"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="35dp"
+            android:background="@drawable/bg_input"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topic">
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_centerVertical="true"
+                android:lines="1"
+                android:fontFamily="@font/abeezee_regular"
+                android:foregroundTint="#AAAAAA"
+                android:textColor="@color/purple_200"
+                android:textSize="20sp"
+                android:background="@android:color/transparent"
+                android:hint="Название"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginBottom="70dp"
+            android:elevation="5dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rlName"
+            app:layout_constraintVertical_bias="1"
+            android:background="@drawable/bg_white_24">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/abeezee_regular"
+                android:textColor="@color/purple_200"
+                android:textSize="20sp"
+                android:elevation="5dp"
+                android:text="Дальше"/>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
