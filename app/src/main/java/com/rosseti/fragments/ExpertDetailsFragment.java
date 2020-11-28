@@ -23,6 +23,8 @@ import com.rosseti.models.Suggestion;
 import com.rosseti.network.ApiClient;
 import com.squareup.picasso.Picasso;
 
+import org.jetbrains.annotations.NotNull;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -226,4 +228,14 @@ public class ExpertDetailsFragment extends BaseFragment {
         return view;
     }
 
+    @NotNull
+    @Override
+    public String getTitle() {
+        return "Проекты";
+    }
+
+    @Override
+    public void setTitle(@NotNull String title) {
+
+    }
 }

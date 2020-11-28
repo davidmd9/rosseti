@@ -14,13 +14,14 @@ import com.rosseti.base.BaseFragment
 class ProfileFragment: BaseFragment() {
 
 
+    override var title: String = "Профиль"
     lateinit var textViewSuggest: TextView
     lateinit var textViewCommitCount: TextView
     lateinit var textViewSucces: TextView
     lateinit var textViewTotal: TextView
     lateinit var textViewRating: TextView
-    lateinit var textViewInfo: TextView
 
+    lateinit var textViewInfo: TextView
     lateinit var buttonNext: RelativeLayout
 
     override fun onCreateView(

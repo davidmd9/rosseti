@@ -21,6 +21,8 @@ import com.rosseti.models.Comments;
 import com.rosseti.models.Suggestion;
 import com.rosseti.network.ApiClient;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -101,4 +103,14 @@ public class ChatFragment extends BaseFragment {
         return view;
     }
 
+    @NotNull
+    @Override
+    public String getTitle() {
+        return "Обсуждение";
+    }
+
+    @Override
+    public void setTitle(@NotNull String title) {
+
+    }
 }

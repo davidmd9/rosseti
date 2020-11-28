@@ -19,6 +19,8 @@ import com.rosseti.models.Suggestion;
 import com.rosseti.models.Suggestions;
 import com.rosseti.network.ApiClient;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -124,5 +126,16 @@ public class ExpertFragment extends BaseFragment {
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
+    }
+
+    @NotNull
+    @Override
+    public String getTitle() {
+        return "Проекты";
+    }
+
+    @Override
+    public void setTitle(@NotNull String title) {
+
     }
 }

@@ -42,6 +42,8 @@
                 android:fontFamily="@font/abeezee_regular"
                 android:gravity="center"
                 android:text="Cоздать"
+                android:lines="1"
+                android:ellipsize="end"
                 android:textColor="@color/purple_200"
                 android:textSize="36sp" />
 

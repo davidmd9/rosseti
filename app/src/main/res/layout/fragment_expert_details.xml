@@ -57,6 +57,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
+                android:id="@+id/llMediaExistingSolution"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
@@ -142,6 +143,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
+                android:id="@+id/llMediaProposedSolution"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
