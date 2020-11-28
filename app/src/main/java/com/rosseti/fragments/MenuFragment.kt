@@ -8,6 +8,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.rosseti.MainActivity
 import com.rosseti.R
 import com.rosseti.base.BaseFragment
+import com.rosseti.models.SuggestionRequest
 
 class MenuFragment: BaseFragment() {
 
@@ -32,7 +33,9 @@ class MenuFragment: BaseFragment() {
         createExpert = view.findViewById(R.id.createExpert)
 
         createSuggestion.setOnClickListener {
-//            (activity as? MainActivity)?.pushFragment()
+            (activity as? MainActivity)?.pushFragment(CreateSuggestionTopicFragment(
+                SuggestionRequest()
+            ), true)
         }
 
         createApplication.setOnClickListener {

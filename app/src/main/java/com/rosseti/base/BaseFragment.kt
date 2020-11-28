@@ -36,4 +36,10 @@ abstract class BaseFragment : Fragment() {
         val btnBack: ImageButton = toolbar.findViewById(R.id.btnBack)
         btnBack?.setOnClickListener { v: View? -> mainActivity!!.onBackPressed() }
     }
+
+    override fun onResume() {
+        super.onResume()
+
+    }
+
 }
