@@ -1,6 +1,7 @@
 package com.rosseti
 
 import android.R.attr
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
@@ -11,23 +12,20 @@ import com.rosseti.base.BaseFragment
 import com.rosseti.fragments.MenuFragment
 import com.rosseti.fragments.RegFragment
 
-class MainActivity : BaseActivity() {
-
-    lateinit var toolbarTitle: TextView
-    lateinit var btnProfile: ImageButton
-    lateinit var btnBack: ImageButton
+class LoginActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
-        toolbarTitle = findViewById(R.id.toolbarTitle)
-        btnProfile = findViewById(R.id.btnProfile)
-        btnBack = findViewById(R.id.btnBack)
-
-
-        pushFragment(MenuFragment(), false)
-
+        var storage =  Storage(this);
+        if(storage.token != null){
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        } else {
+            pushFragment(RegFragment(), true)
+        }
     }
 
     fun pushFragment(fragment: BaseFragment, isAdd: Boolean) {
@@ -58,11 +56,11 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setToolBarTitle(text: String) {
-        toolbarTitle.text = text
+
     }
 
     override fun setBackButtonVisible(isVisible: Boolean) {
-        btnBack.visibility = View.INVISIBLE
+
     }
 
 }

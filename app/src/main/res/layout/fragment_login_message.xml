@@ -15,32 +15,30 @@
         android:background="@drawable/rectangle_white_24"
         android:elevation="8dp">
 
-
-
-        <br.com.sapereaude.maskedEditText.MaskedEditText
-            android:id="@+id/etPhone"
+        <EditText
+            android:id="@+id/etCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
             android:inputType="phone"
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
             android:textColorHint="#33000000"
-            app:allowed_chars="1234567890"
-            app:keep_hint="true"
-            app:mask="+7 (###) ###-##-##"
             android:background="@android:color/transparent"
             android:fontFamily="@font/abeezee_regular"
+            android:hint="Код из СМС"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
             android:lines="1"
+            android:maxLength="4"
             android:textColor="@color/black"
             android:textSize="20sp"/>
-
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/rlLogin"
+        android:id="@+id/rlReady"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="match_parent"
         android:layout_height="58dp"
@@ -57,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:fontFamily="@font/abeezee_regular"
-            android:text="Далее"
+            android:text="Готово"
             android:textAllCaps="false"
             android:textColor="@color/purple_200"
             android:textSize="20sp" />

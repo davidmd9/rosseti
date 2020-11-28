@@ -36,13 +36,11 @@ class MenuFragment: BaseFragment() {
         }
 
         createApplication.setOnClickListener {
-//            (activity as? MainActivity)?.pushFragment()
+            (activity as? MainActivity)?.pushFragment(ProjectsFragment(), true)
         }
 
         createExpert.setOnClickListener {
 //            (activity as? MainActivity)?.pushFragment()
         }
-
     }
-
 }

@@ -1,43 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/createSuggestion"
             android:layout_width="match_parent"
-            android:elevation="5dp"
-            android:background="@drawable/bg_menu_item"
             android:layout_height="165dp"
-            android:layout_margin="35dp">
+            android:background="@drawable/bg_menu_item"
+            android:elevation="5dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="12dp">
 
             <ImageView
                 android:id="@+id/image"
                 android:layout_width="92dp"
                 android:layout_height="92dp"
-                android:src="@drawable/rosseti_media"
                 android:layout_marginStart="20dp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/rosseti_media"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:fontFamily="@font/abeezee_regular"
-                android:textSize="20sp"
                 android:lines="2"
                 android:text="Создать\nпредложение"
-                android:textColor="@color/purple_200"
                 android:textAlignment="center"
-                app:layout_constraintStart_toEndOf="@+id/image"/>
+                android:textColor="@color/purple_200"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -45,70 +48,73 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/createApplication"
             android:layout_width="match_parent"
-            android:elevation="5dp"
-            android:background="@drawable/bg_menu_item"
-            android:layout_below="@id/createSuggestion"
             android:layout_height="165dp"
-            android:layout_margin="35dp"
-            android:layout_marginTop="32dp">
+            android:layout_below="@id/createSuggestion"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_menu_item"
+            android:elevation="5dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp">
 
             <ImageView
                 android:id="@+id/image2"
                 android:layout_width="92dp"
                 android:layout_height="92dp"
-                android:src="@drawable/idea_1"
                 android:layout_marginStart="20dp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/idea_1"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
+                android:fontFamily="@font/abeezee_regular"
+                android:text="@string/application"
+                android:textAlignment="center"
+                android:textColor="@color/purple_200"
+                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:fontFamily="@font/abeezee_regular"
-                android:textSize="20sp"
-                android:text="@string/application"
-                android:textColor="@color/purple_200"
-                android:textAlignment="center"
-                app:layout_constraintStart_toEndOf="@+id/image2"/>
+                app:layout_constraintStart_toEndOf="@+id/image2"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/createExpert"
-        android:layout_width="match_parent"
-        android:background="@drawable/bg_menu_item"
-        android:elevation="5dp"
-        android:layout_below="@id/createApplication"
-        android:layout_height="165dp"
-        android:layout_margin="35dp"
-        android:layout_marginTop="32dp">
+            android:id="@+id/createExpert"
+            android:layout_width="match_parent"
+            android:layout_height="165dp"
+            android:layout_below="@id/createApplication"
+            android:background="@drawable/bg_menu_item"
+            android:elevation="5dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="12dp">
 
-        <ImageView
-            android:id="@+id/image3"
-            android:layout_width="92dp"
-            android:layout_height="92dp"
-            android:src="@drawable/skills_1"
-            android:layout_marginStart="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="92dp"
+                android:layout_height="92dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/skills_1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:fontFamily="@font/abeezee_regular"
-            android:textSize="20sp"
-            android:text="@string/expert"
-            android:textColor="@color/purple_200"
-            android:textAlignment="center"
-            app:layout_constraintStart_toEndOf="@+id/image3"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abeezee_regular"
+                android:text="@string/expert"
+                android:textAlignment="center"
+                android:textColor="@color/purple_200"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image3"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </RelativeLayout>
 
 </ScrollView>
