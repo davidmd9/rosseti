@@ -30,6 +30,7 @@ import java.lang.String
 class CreateSuggestionProblemFragment(private var model: SuggestionRequest): BaseFragment() {
     private val PICK_IMAGE = 1
     private val PICK_VIDEO = 2
+    override var title = "Создать"
 
     lateinit var etContent: EditText
     lateinit var ivVideo: ImageView

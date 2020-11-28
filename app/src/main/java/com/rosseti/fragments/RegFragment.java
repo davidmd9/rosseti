@@ -14,6 +14,8 @@ import com.rosseti.MainActivity;
 import com.rosseti.R;
 import com.rosseti.base.BaseFragment;
 
+import org.jetbrains.annotations.NotNull;
+
 public class RegFragment extends BaseFragment {
 
     @Nullable
@@ -27,4 +29,14 @@ public class RegFragment extends BaseFragment {
         return view;
     }
 
+    @NotNull
+    @Override
+    public String getTitle() {
+        return null;
+    }
+
+    @Override
+    public void setTitle(@NotNull String title) {
+
+    }
 }

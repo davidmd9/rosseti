@@ -21,6 +21,7 @@ import retrofit2.Response
 
 class CreateSuggestionTopicFragment(private var model: SuggestionRequest): BaseFragment() {
 
+    override var title = "Создать"
     var currentTopic: Topic? = null
     var topics: ArrayList<Topic> = ArrayList()
 

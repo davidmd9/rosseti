@@ -15,6 +15,7 @@ class MenuFragment: BaseFragment() {
     lateinit var createSuggestion: ConstraintLayout
     lateinit var createApplication: ConstraintLayout
     lateinit var createExpert: ConstraintLayout
+    override var title = "seti.inno"
 
     override fun onCreateView(
         inflater: LayoutInflater,

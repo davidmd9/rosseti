@@ -16,6 +16,7 @@ class TopicsFragment(
     ): BaseFragment() {
 
     lateinit var rvTopics: RecyclerView
+    override var title = "Направления деятельности"
 
     override fun onCreateView(
         inflater: LayoutInflater,

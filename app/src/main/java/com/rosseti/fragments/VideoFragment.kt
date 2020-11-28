@@ -10,6 +10,7 @@ import com.rosseti.R
 import com.rosseti.base.BaseFragment
 
 class VideoFragment(private val url: String): BaseFragment() {
+    override var title = "Видео"
 
     override fun onCreateView(
         inflater: LayoutInflater,

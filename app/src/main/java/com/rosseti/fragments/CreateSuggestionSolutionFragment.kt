@@ -21,8 +21,9 @@ import com.rosseti.models.SuggestionRequest
 import java.io.*
 
 class CreateSuggestionSolutionFragment(private var model: SuggestionRequest): BaseFragment() {
-    private val PICK_IMAGE = 1
-    private val PICK_VIDEO = 2
+    private val PICK_IMAGE = 3
+    private val PICK_VIDEO = 4
+    override var title = "Создать"
 
     lateinit var etContent: EditText
     lateinit var ivVideo: ImageView
@@ -53,7 +54,7 @@ class CreateSuggestionSolutionFragment(private var model: SuggestionRequest): Ba
             val intent = Intent()
             intent.type = "video/*"
             intent.action = Intent.ACTION_GET_CONTENT
-            startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE)
+            startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_VIDEO)
         }
 
         ivTakePhoto.setOnClickListener {
@@ -64,6 +65,7 @@ class CreateSuggestionSolutionFragment(private var model: SuggestionRequest): Ba
         }
 
         btnNext.setOnClickListener {
+            model.proposedSolutionText = etContent.text.toString()
             (activity as? MainActivity)?.pushFragment(CreateSuggestionResultFragment(model), true)
         }
 
