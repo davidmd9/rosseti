@@ -1,40 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="32dp">
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp">
 
-        <ImageView
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_marginBottom="36dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/logo" />
-
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="58dp"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:hint="Телефон"
+                android:fontFamily="@font/abeezee_regular"
+                android:padding="8dp"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+
+        </RelativeLayout>
+
+        <Button
+
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_alignParentBottom="true"
+            android:text="Далее"
+            android:textAllCaps="false"
+            android:textSize="20sp"
             android:fontFamily="@font/abeezee_regular"
-            android:gravity="center"
-            android:text="seti.inno"
             android:textColor="@color/purple_200"
-            android:textSize="62dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/abeezee_regular"
-            android:gravity="center"
-            android:text="Рационализатор"
-            android:textColor="@color/gray"
-            android:textSize="20dp" />
-
+            android:background="@drawable/rectangle_white_24"/>
 
     </LinearLayout>
 

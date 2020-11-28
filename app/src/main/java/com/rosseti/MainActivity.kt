@@ -2,15 +2,18 @@ package com.rosseti
 
 import android.R.attr
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
+import com.rosseti.base.BaseActivity
 import com.rosseti.base.BaseFragment
+import com.rosseti.fragments.RegFragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        pushFragment(RegFragment(), true)
     }
 
     fun pushFragment(fragment: BaseFragment, isAdd: Boolean) {
