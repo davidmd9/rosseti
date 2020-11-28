@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+
+    <ImageView
+        android:layout_width="124dp"
+        android:layout_height="124dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/crowns_icon" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/abeezee_regular"
+        android:gravity="center"
+        android:text="Серебряный статус"
+        android:textColor="@color/purple_500"
+        android:textSize="20sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:fontFamily="@font/abeezee_regular"
+            android:gravity="center"
+            android:text="Оценок"
+            android:textColor="@color/purple_500"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_view_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/abeezee_regular"
+            android:gravity="left"
+            android:width="48dp"
+            android:text="0"
+            android:textColor="@color/purple_500"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:fontFamily="@font/abeezee_regular"
+            android:gravity="center"
+            android:text="Комментариев"
+            android:textColor="@color/purple_500"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_view_comit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/abeezee_regular"
+            android:gravity="left"
+            android:width="48dp"
+            android:text="0"
+            android:textColor="@color/purple_500"
+            android:textSize="20sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:fontFamily="@font/abeezee_regular"
+            android:gravity="center"
+            android:text="Предложений"
+            android:textColor="@color/purple_500"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_view_suggest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/abeezee_regular"
+            android:gravity="left"
+            android:width="48dp"
+            android:text="0"
+            android:textColor="@color/purple_500"
+            android:textSize="20sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:fontFamily="@font/abeezee_regular"
+            android:gravity="center"
+            android:text="Одобрено"
+            android:textColor="@color/purple_500"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_view_succes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/abeezee_regular"
+            android:gravity="left"
+            android:width="48dp"
+            android:text="0"
+            android:textColor="@color/purple_500"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:fontFamily="@font/abeezee_regular"
+            android:gravity="center"
+            android:text="Итого"
+            android:textColor="@color/purple_500"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_view_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/abeezee_regular"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/purple_500"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:fontFamily="@font/abeezee_regular"
+            android:gravity="center"
+            android:layout_marginLeft="8dp"
+            android:text="бонусов"
+            android:textColor="@color/purple_500"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_view_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="56dp"
+        android:layout_marginRight="56dp"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentEnd="true"
+        android:fontFamily="@font/abeezee_regular"
+        android:gravity="center"
+        android:text="До золотого статуса еще 15 оценок или 6 комментариев или 1 предложение"
+        android:textColor="@color/purple_500"
+        android:textSize="20sp" />
+
+
+    <RelativeLayout
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/rectangle_white_24"
+        android:elevation="8dp">
+
+        <TextView
+            android:id="@+id/button_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/abeezee_regular"
+            android:text="Готово"
+            android:textAllCaps="false"
+            android:textColor="@color/purple_200"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+</LinearLayout>
