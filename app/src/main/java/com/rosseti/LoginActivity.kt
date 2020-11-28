@@ -24,7 +24,7 @@ class LoginActivity : BaseActivity() {
             startActivity(intent)
             finish()
         } else {
-            pushFragment(RegFragment(), true)
+            pushFragment(RegFragment(), false)
         }
     }
 
