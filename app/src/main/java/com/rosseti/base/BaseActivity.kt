@@ -22,7 +22,7 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     fun hideProgress() {
-    progressDialog?.hide()
+    progressDialog?.dismiss()
     }
 
     fun showErrorMessage(error: String) {

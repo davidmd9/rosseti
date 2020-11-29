@@ -89,8 +89,8 @@ public class ProjectDetailsFragment extends BaseFragment {
         }
 
         if (suggestion.getExisting_solution_image() != null) {
-            Picasso.get().load(suggestion.getExisting_solution_image()).into(imageViewExistingSolution);
-            Picasso.get().load(suggestion.getExisting_solution_image()).into(imagePreviewExistingSolution);
+            imageViewExistingSolution.setVisibility(View.VISIBLE);
+            Picasso.get().load(suggestion.getExisting_solution_image()).error(R.drawable.logo).into(imageViewExistingSolution);
         } else {
             imageViewExistingSolution.setVisibility(View.INVISIBLE);
         }
@@ -119,10 +119,10 @@ public class ProjectDetailsFragment extends BaseFragment {
 
         //PROPOSED SOLUTION
         if (suggestion.getProposed_solution_image() != null) {
-            Picasso.get().load(suggestion.getProposed_solution_image()).into(imageViewProposedSolution);
-            Picasso.get().load(suggestion.getProposed_solution_image()).into(imagePreviewProposedSolution);
+            imageViewProposedSolution.setVisibility(View.VISIBLE);
+            new Picasso.Builder(getContext()).build().load(suggestion.getProposed_solution_image()).into(imageViewProposedSolution);
         } else {
-            imageViewExistingSolution.setVisibility(View.INVISIBLE);
+            imageViewProposedSolution.setVisibility(View.INVISIBLE);
         }
 
         if (suggestion.getProposed_solution_video() == null || suggestion.getProposed_solution_video().isEmpty()) {
@@ -153,7 +153,7 @@ public class ProjectDetailsFragment extends BaseFragment {
 
         //POSITIVE EFFECT
         if (suggestion.getPositive_effect() != null) {
-            tvProposedSolution.setText(suggestion.getPositive_effect());
+            tvPositiveEffect.setText(suggestion.getPositive_effect());
         }
 
         if (suggestion.getRating() != null) {

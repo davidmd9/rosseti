@@ -88,7 +88,6 @@ public class ExpertDetailsFragment extends BaseFragment {
 
         if (suggestion.getExisting_solution_image() != null) {
             Picasso.get().load(suggestion.getExisting_solution_image()).into(imageViewExistingSolution);
-            Picasso.get().load(suggestion.getExisting_solution_image()).into(imagePreviewExistingSolution);
         } else {
             imageViewExistingSolution.setVisibility(View.INVISIBLE);
         }
@@ -107,7 +106,6 @@ public class ExpertDetailsFragment extends BaseFragment {
         //PROPOSED SOLUTION
         if (suggestion.getProposed_solution_image() != null) {
             Picasso.get().load(suggestion.getProposed_solution_image()).into(imageViewProposedSolution);
-            Picasso.get().load(suggestion.getProposed_solution_image()).into(imagePreviewProposedSolution);
         } else {
             imageViewExistingSolution.setVisibility(View.INVISIBLE);
         }
